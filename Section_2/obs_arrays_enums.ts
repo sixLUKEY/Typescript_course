@@ -23,5 +23,5 @@ favouriteActivites = ["sport", "fitness", 22];
 
 if (person.hobbies)
   for (let hobby of person.hobbies) {
-    console.log(hobby.length);
+    console.log(hobby);
   }
