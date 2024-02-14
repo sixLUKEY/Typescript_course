@@ -13,7 +13,7 @@ const person: {
 let favouriteActivites: (string | number)[];
 favouriteActivites = ["sport", "fitness", 22];
 
-console.log(person.name);
+// console.log(person.name); Commented out for Github issue
 
 if (person.hobbies)
   for (let hobby of person.hobbies) {
