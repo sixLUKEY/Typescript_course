@@ -1,0 +1,1 @@
+// Refresher for modern Javascript syntax
