@@ -71,3 +71,48 @@ function useVehicle(vehicle: Vehicle) {
 }
 
 useVehicle(v2);
+
+interface Bird {
+  type: "bird";
+  flyingSpeed: number;
+}
+
+interface Horse {
+  type: "horse";
+  runningSpeed: number;
+}
+
+type Animal = Bird | Horse;
+
+function moveAnimal(animal: Animal) {
+  let speed;
+  switch (animal.type) {
+    case "bird":
+      speed = animal.flyingSpeed;
+      break;
+    case "horse":
+      speed = animal.runningSpeed;
+      break;
+  }
+  console.log(`Moving at an incredible speed of ${speed}!`);
+}
+
+let newBird: Bird = {
+  type: "bird",
+  flyingSpeed: 120,
+};
+
+moveAnimal(newBird);
+
+let paragraph = document.querySelector("p");
+
+let inputElement = <HTMLInputElement>document.getElementById("big-input");
+
+//OR
+
+let anotherParagraph = document.getElementById(
+  "big-para"
+) as HTMLParagraphElement;
+
+inputElement.value = "A message!";
+anotherParagraph.innerText = "hey";
