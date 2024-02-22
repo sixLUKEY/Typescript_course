@@ -116,3 +116,27 @@ let anotherParagraph = document.getElementById(
 
 inputElement.value = "A message!";
 anotherParagraph.innerText = "hey";
+
+interface ErrorContainer {
+  // { email: 'Not a valid email' }
+  [prop: string]: string;
+}
+
+const errorBag: ErrorContainer = {
+  email: "Not a valid Email",
+  username: "Must start with a capital letter",
+};
+
+// Optional Chaining
+const fetchedUserData = {
+  id: "u1",
+  name: "Lukas",
+  job: { title: "Boss", years: 2 },
+};
+
+console.log(fetchedUserData?.job?.title);
+
+const userInput = '';
+
+const storedData = userInput ?? 'Default';
+console.log(storedData)
