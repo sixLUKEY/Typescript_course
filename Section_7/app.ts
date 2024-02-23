@@ -1,12 +1,24 @@
-const names: Array<string> = ["Max", "Manuel"]; // string[]
-names[0].replace("", "-");
+interface Objectibles {
+  name: string;
+  age: number;
+  regions?: string[];
+}
 
-const promise: Promise<string> = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("The promise has been resolved!");
-  }, 2000);
-});
+function merge<T, U>(objA: T, objB: U) {
+    //@ts-ignore
+  return Object.assign(objA, objB);
+}
 
-promise.then(data => {
-    data.slice()
-})
+let objectA: Objectibles = {
+  name: "Luke",
+  age: 23,
+  regions: ['ZA']
+};
+
+let objectB: Objectibles = {
+  name: "AK",
+  age: 47,
+};
+
+let mergedObject = merge(objectA, objectB);
+console.log(mergedObject.name);
