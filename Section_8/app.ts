@@ -16,6 +16,7 @@ function WithTemplate(template: string, hookId: string) {
   };
 }
 
+@Logger('Logging...')
 @WithTemplate("<h1>My Person Object</h1>", "app")
 class Person {
   name = "Max";
