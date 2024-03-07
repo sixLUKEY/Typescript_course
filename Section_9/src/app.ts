@@ -1,3 +1,11 @@
+// Drag 'n Drop interfaces
+interface Draggable {
+  dragStartHandler(event: DragEvent): void;
+  dragEndHandler(event: DragEvent): void;
+}
+
+interface DragTarget {}
+
 enum ProjectStatus {
   Active,
   Finished,
@@ -168,7 +176,7 @@ class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> {
     if (this.project.people === 1) {
       return "1 person";
     }
-    return `${this.project.people} persons`
+    return `${this.project.people} persons`;
   }
 
   constructor(hostId: string, project: Project) {
