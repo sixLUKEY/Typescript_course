@@ -4,12 +4,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { autoBind } from "../decorators/autobind.js";
+import { autoBind as AutoBind } from "../decorators/autobind.js";
 import { projectState } from "../state/project-state.js";
-import { validate } from "../util/validation.js";
-import { Component } from "./base-component.js";
+import * as Validation from "../util/validation.js";
+import BaseComponent from "./base-component.js";
 // ProjectInput class
-export class ProjectInput extends Component {
+export class ProjectInput extends BaseComponent {
     constructor() {
         super("project-input", "app", true, "user-input");
         this.titleInputElement = this.element.querySelector("#title");
@@ -40,9 +40,9 @@ export class ProjectInput extends Component {
             min: 1,
             max: 5,
         };
-        if (!validate(titleValidatable) ||
-            !validate(descriptionValidatable) ||
-            !validate(peopleValidatable)) {
+        if (!Validation.validate(titleValidatable) ||
+            !Validation.validate(descriptionValidatable) ||
+            !Validation.validate(peopleValidatable)) {
             alert("Invalid input!");
         }
         else {
@@ -65,5 +65,5 @@ export class ProjectInput extends Component {
     }
 }
 __decorate([
-    autoBind
+    AutoBind
 ], ProjectInput.prototype, "submitHandler", null);
