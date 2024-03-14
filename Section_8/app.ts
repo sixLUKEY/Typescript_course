@@ -1,3 +1,4 @@
+//@ts-ignore
 function Logger(target: any, propertyName: string | symbol) {
   console.log("Property Decorator!!");
   console.log(target, propertyName);
