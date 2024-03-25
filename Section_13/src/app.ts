@@ -21,7 +21,7 @@ function searchAddressHandler(event: Event) {
     .get<GeocodingResponse>(
       `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURI(
         enteredAddress
-      )}&key=${GOOGLE_API_KEY}`
+      )}&key=${process.env.GOOGLE_API_KEY}`
     )
     .then((res) => {
       if (res.data.status !== "OK") {
